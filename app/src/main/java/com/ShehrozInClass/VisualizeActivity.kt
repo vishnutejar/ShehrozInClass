@@ -23,6 +23,11 @@ class VisualizeActivity : AppCompatActivity() {
         binding.btColose.setOnClickListener {
             onBackPressed()
         }
+        binding.btRestore.setOnClickListener {
+            binding.txtResult.text=getText(R.string.red)
+            binding.txtResult.setTextColor(getColor(R.color.red))
+            binding.root.setBackgroundColor(getColor(R.color.white))
+        }
     }
 
     private fun setBackgroundColor() {

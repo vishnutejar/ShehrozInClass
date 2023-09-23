@@ -28,7 +28,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        binding.rdRed.isChecked = true
+        selectedColor = getString(R.string.red)
+            binding.rdRed.isChecked = true
         binding.spinner.setSelection(0)
         binding.rdRed.setOnClickListener {
             onRadioButtonClicked(it)
@@ -41,8 +42,8 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btViewtheresult.setOnClickListener {
             bundle = Bundle()
-            bundle.putString("color", selectedColor)
-            bundle.putString("selectedValueSpinner", selectedValueSpinner)
+            bundle?.putString("color", selectedColor)
+            bundle?.putString("selectedValueSpinner", selectedValueSpinner)
             val intent = Intent(this, VisualizeActivity::class.java)
             intent.putExtras(bundle)
             startActivity(intent)
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity() {
             selectedValueSpinner = resources.getStringArray(R.array.spinner_array)[it]
         }
     }
+
     private fun onRadioButtonClicked(view: View) {
         if (view is RadioButton) {
             when (view.getId()) {
@@ -63,6 +65,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.rd_blue -> {
                     selectedColor = getString(R.string.blue)
+                }
+                else -> {
+                    selectedColor = getString(R.string.red)
                 }
             }
         }
