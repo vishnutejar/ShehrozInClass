@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Shehroz In Class</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
+    <string name="close">Close</string>
+    <string name="viewtheresult">View The Result</string>
+    <string-array name="spinner_array">
+        <item>White</item>
+        <item>Light Gray</item>
+    </string-array>
+</resources>
